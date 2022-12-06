@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+
+<body>
+    {% extends 'base.html' %}
+    {% load static %}
+    {% block title %}SongRec{% endblock %}
+
+    {% block content %}
+
+    <div class="d-flex flex-wrap justify-content-center w-100 p-5">
+        <div style="width: 350px; margin-top: 90px;">
+            <h1 style="color: #E5DEDE;"><span style="color: #8DB59D;">Recomende</span> músicas para outras pessoas e <span style="color: #8DB59D;">descubra</span> músicas novas também!</h1>
+            <p style="color: #E5DEDE;">Plataforma criada especialmente para aquelas pessoas que adoram compartilhar suas <span style="color: #8DB59D;">músicas</span> do momento.</p>
+        </div>
+        <img class="" src="{% static 'img/listening-img.png' %}" alt="">
+    </div>
+
+
+    <!-- BOX - INFO -->
+
+    <div class="p-5 d-flex flex-wrap justify-content-center text-center gap-5 fs-3 text-light">
+        <div class="p-5 border border-4 border-light rounded-4" style="background: #8db59d; width: 350px;">
+            <img class="my-4" src="{% static 'img/icon-box2.png' %}" alt="">
+            <p>Compartilhe suas músicas do momento para que outras pessoas também possam ouvi-lás.</p>
+        </div>
+
+        <div class="p-5 border border-4 border-light rounded-4" style="background: #8db59d; width: 350px;">
+            <img class="my-4" src="{% static 'img/icon-box2.png' %}" alt="">
+            <p>Compartilhe suas músicas do momento para que outras pessoas também possam ouvi-lás.</p>
+        </div>
+
+        <div class="p-5 border border-4 border-light rounded-4" style="background: #8db59d; width: 350px;">
+            <img class="my-4" src="{% static 'img/icon-box2.png' %}" alt="">
+            <p>Compartilhe suas músicas do momento para que outras pessoas também possam ouvi-lás.</p>
+        </div>
+    </div>
+    {% endblock %}
+</body>
+
+</html>

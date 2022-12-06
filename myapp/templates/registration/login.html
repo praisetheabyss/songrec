@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    {% extends 'base.html' %}
+
+    {% load static %}
+
+    {% block title %}Login{% endblock %}
+
+    {% block content %}
+    <div class="d-flex flex-column w-100 p-5 h-75">
+        <div class="d-flex flex-column text-center text-light mt-5 mb-4">
+            <img class="mx-auto" src="{% static 'img/bigger-icon.png' %}" width="150" alt="">
+            <h1>Songrec</h1>
+            <h6 style="color: #909090">Faça seu login na plataforma!</h6>
+        </div>
+
+        <form class="d-flex flex-column mx-auto justify-content-center" method="post" style="width: 400px;">
+            {% csrf_token %}
+            <label class="mb-2" for="user_email"></label>
+            <input class="mb-3 rounded-5 p-3 border-0" type="e-mail" placeholder="Digite seu e-mail" style="background: #403D3D; color: #909090; height: 50px;">
+            <input class="mb-3 rounded-5 ps-3 border-0 font-weight-bold" type="password" placeholder="Digite sua senha" style="background: #403D3D; color: #909090; height: 50px;">
+            <div class="text-light mb-4">
+                <input class="ms-2" type="checkbox" name="remember" id="remember" style="width: 24px; height: 24px;">
+                <label class="align-top ms-1" for="remember" style="color: #D9D9D9;">Lembrar de mim</label>
+            </div>
+
+            <!-- {{ form.as_p }} -->
+            <button class="border-0 p-2 rounded-4" type="submit" style="background:#8db59d;">Conectar-se</button>
+        </form>
+        <div class="d-flex flex-column mx-auto text-center mt-4">
+            <a href="" class="" style="color: #909090;">Esqueceu sua senha?</a>
+            <a href="" class="" style="color: #909090;">Não possui conta ainda? Crie uma agora!</a>
+        </div>
+
+    </div>
+    {% endblock %}
+
+
+</body>
+
+</html>
