@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title>
+
+</head>
+
+<body>
+    {% extends 'base.html' %}
+
+    {% load static %}
+
+    {% load crispy_forms_filters %}
+    {% load crispy_forms_tags %}
+
+
+    {% block title %}Login{% endblock %}
+
+    {% block content %}
+    <div class="d-flex flex-column w-100 p-5 h-75">
+        <div class="d-flex flex-column text-center text-light mt-5 mb-4">
+            <img class="mx-auto" src="{% static 'img/bigger-icon.png' %}" width="150" alt="">
+            <h1>Songrec</h1>
+            <h6 style="color: #909090">Faça seu cadastro na plataforma!</h6>
+        </div>
+
+        <form method="post" class="text-primary d-flex flex-column flex-wrap mx-auto">
+            {% csrf_token %}
+            <div class="d-flex w-100 gap-2">
+                {{ register_form.first_name | as_crispy_field }}
+                {{ register_form.last_name | as_crispy_field }}
+            </div>
+            {{ register_form.email | as_crispy_field }}
+            {{ register_form.username | as_crispy_field }}
+            <div class="d-flex w-100 gap-2">
+                {{ register_form.password1 }}
+                {{ register_form.password2 }}
+            </div>
+            {{ register_form.birth_date | as_crispy_field }}
+
+
+            <button class="border-0 p-2 rounded-4" type="submit" style="background:#8db59d;" type="submit" id="submit">Cadastrar-se</button>
+        </form>
+        <div class="d-flex flex-column mx-auto text-center mt-4">
+            <a href="/accounts/login" class="" style="color: #909090;">Já possui uma conta? Faça login agora!</a>
+        </div>
+
+
+
+</form>
+
+    </div>
+    {% endblock %}
+
+
+</body>
+
+</html>

@@ -1,18 +1,16 @@
 from django.db import models
 import uuid
+# from django.contrib.auth.models import AbstractUser
+from django.utils.translation import gettext_lazy as _
 
 # Create your models here.
-class User(models.Model):
-    user_id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-    username = models.CharField(max_length=9, unique=True)
-    first_name = models.CharField(max_length=30)
-    last_name = models.CharField(max_length=30)
-    birth_date = models.DateField()
-    user_email = models.CharField(max_length=40, unique=True)
-    created_at = models.DateField(auto_now=True, editable=False)
+# class User(AbstractUser):
+#     user_id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+#     email = models.EmailField()
+#     birth_date = models.DateField()
 
-    def __str__(self):
-        return self.username
+#     def __str__(self):
+#         return self.username
 
 class Genre(models.Model):
     genre_id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
@@ -46,7 +44,7 @@ class Post(models.Model):
 
 class Comment(models.Model):
     comment_id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-    comment_text = models.TextField
+    comment_text = models.TextField()
     created_at = models.DateField(auto_now=True)
 
     # foreign key do post e do user

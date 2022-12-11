@@ -10876,12 +10876,3 @@ textarea.form-control-lg {
 }
 
 /*# sourceMappingURL=bootstrap.css.map */
-.logged-user {
-  color: black;
-}
-@media(max-width: 990px) {
-  .logged-user {
-      position: relative;
-      left: 30vw;
-  }
-}
